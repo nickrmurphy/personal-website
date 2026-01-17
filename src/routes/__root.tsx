@@ -33,7 +33,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-gray-200">
+      <body className="bg-gray-200 dark:bg-gray-900">
         {children}
         <Scripts />
       </body>
