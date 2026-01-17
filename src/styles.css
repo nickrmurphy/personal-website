@@ -1,9 +1,18 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/rubik";
+
+@theme {
+  --font-inter: "Inter Variable", sans-serif;
+  --font-rubik: "Rubik Variable", serif;
+}
 
 body {
   margin: 0;
   font-family: "Inter Variable", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-inter);
+
+  @apply text-black/90;
 }
