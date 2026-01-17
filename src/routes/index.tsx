@@ -1,60 +1,39 @@
+import { LinkBadge } from "@/components/badge";
+import { ProfilePhoto } from "@/components/profile-photo";
+import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: App });
 
 function App() {
   return (
-    <main className="space-y-2 p-8">
-      <header className="grid grid-cols-5 justify-center items-center">
-        <div className="col-span-1 p-4">
-          <div className="w-full max-w-52 aspect-square rounded-full overflow-hidden">
-            <img src="/profile.jpeg" alt="Nick Murphy" className="w-full h-full object-cover" />
+    <main className="space-y-2 p-2 sm:p-6 max-w-5xl mx-auto h-screen border-x border-black/10 bg-gray-100 shadow-sm">
+      <header className="flex flex-col-reverse sm:flex-row p-2 lg:p-6 gap-6">
+        <div className="w-full sm:w-2/3 flex flex-col items-start justify-start gap-6">
+          <div className="space-y-2">
+            <h1 className="text-4xl sm:text-5xl font-bold font-rubik text-center sm:text-left">
+              Hi! I'm Nick.
+            </h1>
+            <p className="text-base sm:text-lg max-w-prose font-medium text-center sm:text-left">
+              I'm a Software Engineer based in Chicago, building mission-driven products from the
+              ground up.
+            </p>
+          </div>
+          <div className="flex gap-4 mt-auto flex-wrap justify-center sm:justify-start w-full">
+            <LinkBadge href="https://github.com/nickrmurphy">
+              <GithubLogoIcon weight="bold" />
+              <span className="sm:block hidden">GitHub</span>
+            </LinkBadge>
+            <LinkBadge href="www.linkedin.com/in/nrmurphy">
+              <LinkedinLogoIcon weight="bold" className="size-4" />
+              <span className="sm:block hidden">LinkedIn</span>
+            </LinkBadge>
           </div>
         </div>
-        <div className="col-span-4 flex flex-col gap-4 p-8">
-          <h1 className="text-4xl font-extrabold">Hi! I'm Nick.</h1>
-          <p className="text-xl max-w-prose">
-            I'm a software engineer and a person who likes to build things that are cool and
-            sometimes lame.
-          </p>
+        <div className="w-full sm:w-1/3 flex justify-center sm:justify-end">
+          <ProfilePhoto src="/profile.jpeg" alt="Nick Murphy" />
         </div>
       </header>
-      <div className="grid grid-cols-5 gap-8">
-        <div className="col-span-3 p-4 space-y-6">
-          <p className="leading-relaxed max-w-prose">
-            As a software engineer, I'm passionate about building things that are cool. I'm a quick
-            learner and I'm always looking to improve my skills. I'm also a big fan of the open
-            source community and I'm always looking to contribute to open source projects. I'm also
-            a big fan of the open source community and I'm always looking to contribute to open
-            source projects.
-          </p>
-          <div className="flex gap-4">
-            <div className="size-8 rounded-2xl bg-amber-100" />
-            <div className="size-8 rounded-2xl bg-amber-100" />
-            <div className="size-8 rounded-2xl bg-amber-100" />
-          </div>
-        </div>
-        <div className="col-span-2 p-4 space-y-4">
-          <div className="space-y-2">
-            <p>💼 Founding Senior Software Engineer</p>
-            <p className="text-sm text-gray-500">June 2021 - Present</p>
-            <p>💼 Senior Software Engineer</p>
-            <p className="text-sm text-gray-500">June 2019 - June 2021</p>
-            <p>💼 Software Developer</p>
-            <p className="text-sm text-gray-500">June 2018 - June 2019</p>
-            <p>🎓 B.S. in Computer Science</p>
-            <p className="text-sm text-gray-500">June 2014 - June 2018</p>
-          </div>
-          <span>Learn more</span>
-        </div>
-      </div>
-      <div className="grid grid-cols-3 gap-8 w-full">
-        <div className="size-full bg-amber-100 rounded-xl min-h-60" />
-        <div className="size-full bg-amber-100 rounded-xl min-h-60" />
-        <div className="size-full bg-amber-100 rounded-xl min-h-60" />
-        {/* <div className="size-full bg-amber-400 min-h-60" />
-        <div className="size-full bg-amber-400 min-h-60" /> */}
-      </div>
     </main>
   );
 }
