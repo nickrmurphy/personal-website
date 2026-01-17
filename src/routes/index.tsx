@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({ component: App });
 
 function App() {
   return (
-    <main className="space-y-2 p-2 sm:p-6 max-w-5xl mx-auto h-screen border-x border-black/10 bg-gray-100 dark:bg-gray-950 shadow-sm">
+    <main className="space-y-2 p-2 py-8 sm:p-6 max-w-5xl mx-auto h-screen border-x border-black/10 bg-gray-100 dark:bg-gray-950 shadow-sm">
       <header className="flex flex-col-reverse sm:flex-row p-2 lg:p-6 gap-6">
         <div className="w-full sm:w-2/3 flex flex-col items-start justify-start gap-6">
           <div className="space-y-2">
