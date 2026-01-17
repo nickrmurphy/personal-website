@@ -14,5 +14,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-inter);
 
-  @apply text-black/90;
+  @apply text-black/90 dark:text-white/90;
 }
