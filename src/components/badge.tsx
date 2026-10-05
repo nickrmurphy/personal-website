@@ -1,9 +1,20 @@
-export function LinkBadge({ children, href }: { children: React.ReactNode; href: string }) {
+// EB secondary Button: a 40px outlined pill. Collapses to an icon-only circle below `sm`.
+export function LinkBadge({
+  children,
+  href,
+  label,
+}: {
+  children: React.ReactNode;
+  href: string;
+  label: string;
+}) {
   return (
     <a
       href={href}
-      className="hover:bg-black/5 dark:hover:bg-white/10 font-medium transition-all active:scale-95 rounded-full border gap-1.5 text-sm border-black/20 dark:border-white/20 p-3 sm:px-3 sm:py-2 flex items-center justify-center [&>svg]:size-5 sm:[&>svg]:size-4"
+      aria-label={label}
       target="_blank"
+      rel="noreferrer"
+      className="inline-flex h-10 w-10 sm:w-auto items-center justify-center gap-2 sm:px-5 rounded-pill border border-eb-border text-body leading-none font-semibold text-eb-text whitespace-nowrap select-none transition-[background-color,border-color,color,transform] duration-200 ease-(--eb-ease-standard) hover:bg-eb-muted hover:border-eb-text-muted active:scale-98 [&>svg]:size-4 [&>svg]:flex-none"
     >
       {children}
     </a>

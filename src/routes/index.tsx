@@ -29,25 +29,25 @@ const workHistory: WorkItem[] = [
 
 function App() {
   return (
-    <main className="space-y-8 p-2 py-8 sm:p-6 max-w-5xl mx-auto h-screen border-x border-black/10 bg-gray-100 dark:bg-gray-950 shadow-sm">
-      <header className="flex flex-col-reverse sm:flex-row p-2 lg:p-6 gap-6">
+    <main className="space-y-16 px-4 py-10 sm:p-10 max-w-5xl mx-auto min-h-screen">
+      <header className="flex flex-col-reverse sm:flex-row gap-8">
         <div className="w-full sm:w-2/3 flex flex-col items-start justify-start gap-6">
-          <div className="space-y-2">
-            <h1 className="text-4xl sm:text-5xl font-bold font-rubik text-center sm:text-left">
+          <div className="space-y-4">
+            <h1 className="text-display-3 sm:text-display-2 lg:text-display-1 font-extrabold uppercase tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
               Hi! I'm Nick.
             </h1>
-            <p className="text-base sm:text-lg max-w-prose font-medium text-center sm:text-left">
-              I'm a Software Engineer based in Chicago, building mission-driven products from the
+            <p className="text-title font-normal max-w-prose text-center sm:text-left">
+              I'm a software engineer based in Chicago, building mission-driven products from the
               ground up.
             </p>
           </div>
-          <div className="flex gap-4 mt-auto flex-wrap justify-center sm:justify-start w-full">
-            <LinkBadge href="https://github.com/nickrmurphy">
-              <GithubLogoIcon />
+          <div className="flex gap-3 mt-auto flex-wrap justify-center sm:justify-start w-full">
+            <LinkBadge href="https://github.com/nickrmurphy" label="GitHub">
+              <GithubLogoIcon weight="bold" />
               <span className="sm:block hidden">GitHub</span>
             </LinkBadge>
-            <LinkBadge href="https://www.linkedin.com/in/nrmurphy">
-              <LinkedinLogoIcon className="size-4" />
+            <LinkBadge href="https://www.linkedin.com/in/nrmurphy" label="LinkedIn">
+              <LinkedinLogoIcon weight="bold" />
               <span className="sm:block hidden">LinkedIn</span>
             </LinkBadge>
           </div>
