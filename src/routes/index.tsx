@@ -43,8 +43,8 @@ function App() {
               Hi! I'm Nick.
             </h1>
             <p className="text-title font-normal max-w-prose text-center sm:text-left">
-              I'm a software engineer based in Chicago, building mission-driven products from the
-              ground up.
+              I'm a software engineer based in Chicago. I care about helping people do their best
+              work, through the products I build and the teams I'm part of.
             </p>
           </div>
           <div className="flex gap-3 mt-auto flex-wrap justify-center sm:justify-start w-full">
