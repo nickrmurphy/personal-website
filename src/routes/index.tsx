@@ -8,22 +8,28 @@ export const Route = createFileRoute("/")({ component: App });
 
 const workHistory: WorkItem[] = [
   {
+    title: "Senior Software Engineer",
+    company: "Higharc",
+    location: "Remote",
+    period: "2026 – Present",
+  },
+  {
     title: "Founding Senior Software Engineer",
     company: "STEAMe",
     location: "Chicago, IL",
-    period: "2024 - Present",
+    period: "2024 – 2026",
   },
   {
     title: "Senior Software Engineer",
     company: "Unite Us",
     location: "Remote",
-    period: "2021 - 2024",
+    period: "2021 – 2023",
   },
   {
-    title: "Software Developer",
+    title: "Development Team Manager",
     company: "Applied Systems",
     location: "University Park, IL",
-    period: "2019 - 2021",
+    period: "2019 – 2021",
   },
 ];
 
