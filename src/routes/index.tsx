@@ -59,7 +59,7 @@ function App() {
           </div>
         </div>
         <div className="w-full sm:w-1/3 flex justify-center sm:justify-end">
-          <ProfilePhoto src="/profile.jpeg" alt="Nick Murphy" />
+          <ProfilePhoto src="/avatar-circle.svg" alt="Nick Murphy" />
         </div>
       </header>
       <WorkHistory items={workHistory} />
