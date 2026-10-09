@@ -3,6 +3,7 @@ export type WorkItem = {
   company: string;
   location: string;
   period: string;
+  previousTitle?: string;
 };
 
 export function WorkHistory({ items }: { items: WorkItem[] }) {
@@ -22,6 +23,9 @@ export function WorkHistory({ items }: { items: WorkItem[] }) {
             <div className="text-eb-text-muted">
               {item.company} · {item.location}
             </div>
+            {item.previousTitle && (
+              <div className="text-eb-text-muted text-sm">Previously {item.previousTitle}</div>
+            )}
           </li>
         ))}
       </ul>
