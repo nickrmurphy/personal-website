@@ -1,5 +1,6 @@
 import { LinkBadge } from "@/components/badge";
 import { ProfilePhoto } from "@/components/profile-photo";
+import { ValueItem, Values } from "@/components/values";
 import { WorkHistory, WorkItem } from "@/components/work-history";
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -33,6 +34,25 @@ const workHistory: WorkItem[] = [
   },
 ];
 
+const values: ValueItem[] = [
+  {
+    title: "Leave it better",
+    description: "Every codebase, team and process I touch should be easier for the next person.",
+  },
+  {
+    title: "Clarity over cleverness",
+    description: "Simple code and plain words scale further than smart ones.",
+  },
+  {
+    title: "Ship, then listen",
+    description: "Small releases and real feedback beat long plans and guesses.",
+  },
+  {
+    title: "Lift others up",
+    description: "The best work I've done came from helping someone else do theirs.",
+  },
+];
+
 function App() {
   return (
     <main className="space-y-16 px-4 py-10 sm:p-10 max-w-5xl mx-auto min-h-screen">
@@ -63,6 +83,7 @@ function App() {
         </div>
       </header>
       <WorkHistory items={workHistory} />
+      <Values items={values} />
     </main>
   );
 }
