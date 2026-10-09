@@ -1,6 +1,7 @@
 export type ValueItem = {
   title: string;
-  description: string;
+  // Optional one-line note shown under the title.
+  description?: string;
 };
 
 export function Values({ items }: { items: ValueItem[] }) {
@@ -15,7 +16,9 @@ export function Values({ items }: { items: ValueItem[] }) {
             </div>
             <div className="space-y-1">
               <div className="text-title">{value.title}</div>
-              <div className="text-eb-text-muted max-w-prose">{value.description}</div>
+              {value.description && (
+                <div className="text-eb-text-muted max-w-prose">{value.description}</div>
+              )}
             </div>
           </li>
         ))}

@@ -35,22 +35,10 @@ const workHistory: WorkItem[] = [
 ];
 
 const values: ValueItem[] = [
-  {
-    title: "Leave it better",
-    description: "Every codebase, team and process I touch should be easier for the next person.",
-  },
-  {
-    title: "Clarity over cleverness",
-    description: "Simple code and plain words scale further than smart ones.",
-  },
-  {
-    title: "Ship, then listen",
-    description: "Small releases and real feedback beat long plans and guesses.",
-  },
-  {
-    title: "Lift others up",
-    description: "The best work I've done came from helping someone else do theirs.",
-  },
+  { title: "Be kind to others, and to yourself." },
+  { title: "Live in moments, not milestones." },
+  { title: "Do what's right, even when it's hard." },
+  { title: "Leave things better than you found them." },
 ];
 
 function App() {
