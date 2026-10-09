@@ -1,0 +1,29 @@
+---
+title: Trailhead
+summary: A weekend hike planner for people within a few hours of Chicago.
+image: /images/projects/trailhead.svg
+imageAlt: Illustrated mountain range with a dashed trail leading to a map pin
+link: https://github.com/nickrmurphy/trailhead
+order: 1
+---
+
+Trailhead is a small web app that answers one question: _where should I hike this weekend?_
+You tell it how far you're willing to drive and how long you want to be on the trail, and it
+suggests a handful of routes with current conditions and the best time to leave.
+
+## Why I built it
+
+Most hiking apps are built for people who live next to mountains. Around Chicago, the good
+trails are scattered across three states and the deciding factor is usually the drive, not the
+elevation. I wanted something that started from my front door instead of from the trail.
+
+## How it works
+
+- Trail data comes from OpenStreetMap and is refreshed nightly.
+- Drive times are calculated from your location, so results are ranked by total time out.
+- Weather and daylight are checked against your planned start so it won't send you out at dusk.
+
+## What I learned
+
+Keeping the scope tiny was the best decision. The first version only supported a single
+question and a list of five results, and that turned out to be most of the value.

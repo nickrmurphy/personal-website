@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/karla";
+@plugin "@tailwindcss/typography";
 
 /* EB design system tokens. Dark only. */
 :root {
@@ -90,6 +91,27 @@ body {
   line-height: var(--eb-line-height-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Long-form text (project write-ups) in EB colours. */
+.prose-eb {
+  --tw-prose-body: var(--eb-text);
+  --tw-prose-headings: var(--eb-text);
+  --tw-prose-lead: var(--eb-text-muted);
+  --tw-prose-links: var(--eb-accent);
+  --tw-prose-bold: var(--eb-text);
+  --tw-prose-counters: var(--eb-text-muted);
+  --tw-prose-bullets: var(--eb-border);
+  --tw-prose-hr: var(--eb-muted);
+  --tw-prose-quotes: var(--eb-text);
+  --tw-prose-quote-borders: var(--eb-accent);
+  --tw-prose-captions: var(--eb-text-muted);
+  --tw-prose-code: var(--eb-text);
+  --tw-prose-pre-code: var(--eb-text);
+  --tw-prose-pre-bg: var(--eb-muted);
+  --tw-prose-th-borders: var(--eb-border);
+  --tw-prose-td-borders: var(--eb-muted);
+  font-size: 1rem;
 }
 
 :focus-visible {
