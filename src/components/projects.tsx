@@ -2,13 +2,14 @@ import { Link } from "@tanstack/react-router";
 
 import type { ProjectMeta } from "@/lib/projects";
 
+// A horizontally scrolling row of project cards that snap into place.
 export function Projects({ items }: { items: ProjectMeta[] }) {
   return (
     <section className="space-y-4">
       <h2 className="text-body font-semibold text-eb-accent">Projects</h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ul className="-mx-4 sm:-mx-10 px-4 sm:px-10 scroll-px-4 sm:scroll-px-10 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 sm:[mask-image:linear-gradient(to_right,transparent,black_2.5rem,black_calc(100%-2.5rem),transparent)] [scrollbar-width:thin] [scrollbar-color:var(--eb-muted)_transparent]">
         {items.map((project) => (
-          <li key={project.slug}>
+          <li key={project.slug} className="w-72 sm:w-80 shrink-0 snap-start">
             <Link
               to="/projects/$slug"
               params={{ slug: project.slug }}

@@ -1,0 +1,26 @@
+---
+title: Standup Digest
+summary: A Slack bot that turns async standup threads into a one-screen summary.
+image: /images/projects/standup.svg
+imageAlt: Illustrated chat messages flowing into a summary card
+order: 3
+---
+
+Standup Digest collects the async standup updates a team posts in Slack and, at a set time
+each morning, posts a short summary: what shipped, what's in progress, and who's blocked.
+
+## Why I built it
+
+Async standups are great until the thread gets long. Managers skim, blockers get buried, and
+the people who need to help never see them. A summary that leads with blockers fixed that.
+
+## How it works
+
+- The bot watches a single channel and groups replies by person.
+- A language model pulls out shipped work, current focus and blockers from each update.
+- Blockers are listed first and mention the person most likely to help.
+
+## What I learned
+
+The summary was only trusted once every line linked back to the original message. People
+wanted a shortcut, not a replacement.
