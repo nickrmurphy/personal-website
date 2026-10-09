@@ -1,6 +1,7 @@
 import { LinkBadge } from "@/components/badge";
 import { ProfilePhoto } from "@/components/profile-photo";
 import { Projects } from "@/components/projects";
+import { ValueItem, Values } from "@/components/values";
 import { WorkHistory, WorkItem } from "@/components/work-history";
 import { projects } from "@/lib/projects";
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
@@ -35,6 +36,13 @@ const workHistory: WorkItem[] = [
   },
 ];
 
+const values: ValueItem[] = [
+  { title: "Be kind to others, and to yourself." },
+  { title: "Live in moments, not milestones." },
+  { title: "Do what's right, even when it's hard." },
+  { title: "Leave things better than you found them." },
+];
+
 function App() {
   return (
     <main className="space-y-16 px-4 py-10 sm:p-10 max-w-5xl mx-auto min-h-screen">
@@ -66,6 +74,7 @@ function App() {
       </header>
       <WorkHistory items={workHistory} />
       <Projects items={projects} />
+      <Values items={values} />
     </main>
   );
 }
