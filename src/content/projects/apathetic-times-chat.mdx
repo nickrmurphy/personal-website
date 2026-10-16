@@ -1,0 +1,34 @@
+---
+title: Apathetic Times Chat
+summary: One short briefing on what Congress is doing each day, and a room to talk it over with friends.
+image: /images/projects/apathetic-times-chat.png
+imageAlt: Two phones showing an Apathetic Times chat room, with messages about the day's briefing and a five-face vote card
+link: https://chat.apathetictimes.com
+order: 1
+---
+
+Every day, Apathetic Times picks one report from the Congressional Research Service, Congress's
+nonpartisan research group, and turns it into a briefing you can read in under five minutes.
+The chat app adds a room around it: you and a few friends read the same briefing, vote on it,
+and talk it over.
+
+## Why I built it
+
+Keeping up with Congress usually means wading through outrage. CRS reports are calm and
+thorough, but they're long. Reading one short, neutral briefing a day is easier when other
+people are reading it too.
+
+## How it works
+
+- Each day the newsroom service, a set of Cloudflare Workflows, ingests new CRS reports, picks
+  one, and has Claude summarize it into a short briefing.
+- Rooms run on Durable Objects, so messages and votes reach everyone in the room right away.
+  D1 stores the briefings, rooms, and history.
+- Voting is a row of five faces, from "No way" to "Totally", so you can react to a policy
+  without writing a paragraph.
+- There are no accounts. You pick a username, share a room link, and the app installs as a PWA.
+
+## What I learned
+
+The conversation is the reason to come back. A briefing on its own is easy to skip; one your
+friends are already arguing about isn't.

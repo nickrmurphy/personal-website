@@ -1,0 +1,33 @@
+---
+title: Notebook
+summary: Daily notes and tasks that live on your device and sync end-to-end encrypted.
+image: /images/projects/notebook.png
+imageAlt: The Notebook app on desktop, with a month calendar, today's notes and tasks, and a weekly sidebar
+link: https://notebook.byearlybird.com
+order: 2
+---
+
+Notebook is a minimal daily notebook. Each day is a ruled list of notes and tasks that you
+edit in place. Press `+` to open a row, Enter to start the next one, and Tab to nest it. A
+separate list holds what you want to get done this week.
+
+## Why I built it
+
+I wanted a notes app that was a plain list per day, with nothing to organize and no folders.
+It also had to work offline and keep my notes private.
+
+## How it works
+
+- It's local first. Entries are stored on the device and the app works fully signed out.
+- Signing in with an emailed code and a passphrase turns on sync through
+  [Starling](https://github.com/nickrmurphy/starling), my end-to-end encrypted sync library
+  running on Cloudflare Workers.
+- Rows use fractional rank keys, so dragging or nesting an entry writes only that entry. When
+  two devices change the same field, the later edit wins.
+- It's a PWA, so it installs on a phone and opens straight to today.
+
+## What I learned
+
+Most of the work went into sync edge cases: an entry whose parent was deleted on another device,
+or two entries indented under each other. Making those entries show up at the top level instead
+of disappearing kept the app trustworthy.
