@@ -1,7 +1,9 @@
 import { LinkBadge } from "@/components/badge";
 import { ProfilePhoto } from "@/components/profile-photo";
+import { Projects } from "@/components/projects";
 import { ValueItem, Values } from "@/components/values";
 import { WorkHistory, WorkItem } from "@/components/work-history";
+import { projects } from "@/lib/projects";
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -72,6 +74,7 @@ function App() {
         </div>
       </header>
       <WorkHistory items={workHistory} />
+      <Projects items={projects} />
       <Values items={values} />
     </main>
   );

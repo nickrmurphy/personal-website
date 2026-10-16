@@ -7,6 +7,9 @@ import { fileURLToPath, URL } from "url";
 
 import tailwindcss from "@tailwindcss/vite";
 import { cloudflare } from "@cloudflare/vite-plugin";
+import mdx from "@mdx-js/rollup";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 const config = defineConfig({
   resolve: {
@@ -22,6 +25,11 @@ const config = defineConfig({
       projects: ["./tsconfig.json"],
     }),
     tailwindcss(),
+    // MDX must compile before the React plugin sees the output.
+    {
+      enforce: "pre",
+      ...mdx({ remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter] }),
+    },
     tanstackStart(),
     viteReact(),
   ],
