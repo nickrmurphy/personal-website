@@ -1,6 +1,9 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 
+import { getSiteOrigin } from "@/lib/site-origin";
 import appCss from "../styles.css?url";
+
+const description = "Software engineer in Chicago.";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -15,6 +18,16 @@ export const Route = createRootRoute({
       {
         title: "Nick Murphy",
       },
+      { name: "description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Nick Murphy" },
+      { property: "og:title", content: "Nick Murphy" },
+      { property: "og:description", content: description },
+      { property: "og:image", content: `${getSiteOrigin()}/og.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Nick Murphy, software engineer in Chicago" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {

@@ -2,6 +2,7 @@ import { ArrowLeftIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
 import { getProject } from "@/lib/projects";
+import { getSiteOrigin } from "@/lib/site-origin";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -16,7 +17,10 @@ export const Route = createFileRoute("/projects/$slug")({
           { name: "description", content: loaderData.summary },
           { property: "og:title", content: loaderData.title },
           { property: "og:description", content: loaderData.summary },
-          { property: "og:image", content: loaderData.image },
+          { property: "og:image", content: `${getSiteOrigin()}${loaderData.image}` },
+          { property: "og:image:width", content: "1600" },
+          { property: "og:image:height", content: "900" },
+          { property: "og:image:alt", content: loaderData.imageAlt },
         ]
       : [],
   }),
