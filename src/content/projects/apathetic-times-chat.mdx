@@ -21,12 +21,11 @@ day's statement on a scale from "No way" to "Totally", and talk it over.
 
 ## How it's built
 
-- **Report pipeline.** Cloudflare Workflows run on a daily schedule. They pull new CRS reports from
-  the Congress.gov API, extract the text from the PDFs into R2, summarize each one, and save it to
-  D1. Each step is retried on its own, so a flaky PDF never reruns the whole batch.
-- **Briefings with Claude.** A second workflow uses the Anthropic SDK to pick the day's report and
-  write the briefing. The output is constrained to a Zod schema, so the app always gets valid,
-  typed content back.
-- **Real-time rooms.** Each chat room is a Durable Object holding hibernatable WebSockets, so
-  messages and votes reach everyone instantly without a server sitting idle.
-- **No accounts.** You pick a username and share a room link, and the app installs as a PWA.
+- **A daily report pipeline.** Every morning a set of Cloudflare Workflows finds new reports from
+  Congress, pulls out their text, and summarizes each one. Every step retries on its own, so one bad
+  report never holds up the rest.
+- **Briefings written with Claude.** Claude picks the day's report and writes the briefing in a fixed
+  structure, so the app always gets content it knows how to show.
+- **Real-time rooms.** Each room lives in its own Durable Object on Cloudflare, so messages and
+  votes reach everyone in the room instantly.
+- **No accounts.** You pick a username and share a link, and the app installs from the browser.
