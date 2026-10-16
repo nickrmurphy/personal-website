@@ -1,0 +1,31 @@
+---
+title: Starling
+summary: The sync library behind my apps. Private by default, works offline, and runs on the web.
+image: /images/projects/starling.png
+imageAlt: An outlined network diagram, with one large node linked to five smaller ones
+link: https://github.com/nickrmurphy/starling
+order: 3
+---
+
+## What it is
+
+I wanted to build a suite of apps quickly, and have every one of them share the same values:
+
+- **Private by default.** Your data belongs to you, and the server can't read it.
+- **Works anywhere.** On the subway or in a coffee shop with bad Wi-Fi, the app keeps working.
+- **As accessible as possible.** Everything runs on the web, so there's nothing to download and no
+  app store in the way.
+
+Starling is the library that gives each app those properties out of the box, so a new app can
+focus on what makes it different. [Notebook](/projects/notebook) is the first app built on it.
+
+## How it's built
+
+- **A local database in the browser.** Each app reads and writes to its own database on the
+  device, so everything is instant and works offline. Sync happens in the background.
+- **End-to-end encryption.** Everything that syncs is encrypted on the device with a key only your
+  passphrase unlocks. The server only ever relays data it can't read.
+- **A small server on Cloudflare.** Each account's synced data lives in its own Durable Object,
+  with sign-in by emailed code. One function call sets it all up for a new app.
+- **Three packages.** A browser client, React hooks, and the server, so starting a new app is
+  mostly wiring rather than rebuilding sync.

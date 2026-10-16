@@ -13,17 +13,15 @@ Most notes apps ask you to organize before you write: folders, tags, pages. Note
 that. Each day is a plain ruled list of notes and tasks that you edit in place, and a separate list
 holds what you want to get done this week.
 
-It works offline, needs no account, and keeps your notes private even when they sync.
+It works offline. Signing in to sync across devices is optional, and your notes stay private when
+they sync.
 
 ## How it's built
 
-- **Local first.** Entries live in IndexedDB on your device, and the app works fully signed out.
-  Every edit is saved locally before anything touches the network.
-- **End-to-end encrypted sync.** Sync runs on [Starling](https://github.com/nickrmurphy/starling),
-  my own sync library. Everything that syncs is encrypted with an account key that only your
-  passphrase unlocks, so the server never sees your notes.
-- **Cloudflare backend.** Each account's synced data lives in its own SQLite-backed Durable Object,
-  accounts live in D1, and sign-in uses emailed one-time codes.
-- **Conflict-friendly data model.** Rows use fractional rank keys, so dragging or nesting an entry
-  writes only that entry, and edits on two devices merge field by field.
-- **PWA.** It installs on a phone and opens straight to today.
+- **Local first.** Notes are saved to a database on your device, so everything is instant and
+  works offline. Sync happens in the background.
+- **Encrypted sync.** Sync runs on [Starling](/projects/starling), my own sync library. Notes are
+  encrypted on the device before they leave it, so the server never sees them.
+- **Built for more than one device.** Edits from your phone and laptop merge piece by piece, so
+  moving a note on one never undoes rewording it on the other.
+- **On the web.** It installs from the browser on any device and opens straight to today.
