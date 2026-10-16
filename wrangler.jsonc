@@ -4,4 +4,8 @@
   "compatibility_date": "2025-09-02",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
+  // Gives Workers Previews (per-PR builds) their workers.dev URLs. A Worker's URL settings change
+  // on `wrangler deploy`, not `wrangler preview`.
+  "preview_urls": true,
+  "previews": {},
 }
