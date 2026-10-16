@@ -7,28 +7,27 @@ link: https://chat.apathetictimes.com
 order: 1
 ---
 
-Every day, Apathetic Times picks one report from the Congressional Research Service, Congress's
-nonpartisan research group, and turns it into a briefing you can read in under five minutes.
-The chat app adds a room around it: you and a few friends read the same briefing, vote on it,
-and talk it over.
+Built in partnership with my colleague [Ben Goldin](https://bengoldin.com/).
 
-## Why I built it
+## What it is
 
-Keeping up with Congress usually means wading through outrage. CRS reports are calm and
-thorough, but they're long. Reading one short, neutral briefing a day is easier when other
-people are reading it too.
+An informed public is supposed to be the point of a democracy, but staying informed usually means
+picking between news that's biased and sensational, or objective and boring. Apathetic Times aims
+for objective and engaging.
 
-## How it works
+Each day it takes one report from the Congressional Research Service, Congress's nonpartisan
+research group, and turns it into a briefing you can read in under five minutes. It has no spin
+and never mentions political parties. You and a few friends share a room, vote on the day's
+statement with a row of five faces from "No way" to "Totally", and talk it over.
 
-- Each day the newsroom service, a set of Cloudflare Workflows, ingests new CRS reports, picks
-  one, and has Claude summarize it into a short briefing.
-- Rooms run on Durable Objects, so messages and votes reach everyone in the room right away.
-  D1 stores the briefings, rooms, and history.
-- Voting is a row of five faces, from "No way" to "Totally", so you can react to a policy
-  without writing a paragraph.
-- There are no accounts. You pick a username, share a room link, and the app installs as a PWA.
+## How it's built
 
-## What I learned
-
-The conversation is the reason to come back. A briefing on its own is easy to skip; one your
-friends are already arguing about isn't.
+- **Report pipeline.** Cloudflare Workflows run on a daily schedule. They pull new CRS reports from
+  the Congress.gov API, extract the text from the PDFs into R2, summarize each one, and save it to
+  D1. Each step is retried on its own, so a flaky PDF never reruns the whole batch.
+- **Briefings with Claude.** A second workflow uses the Anthropic SDK to pick the day's report and
+  write the briefing. The output is constrained to a Zod schema, so the app always gets valid,
+  typed content back.
+- **Real-time rooms.** Each chat room is a Durable Object holding hibernatable WebSockets, so
+  messages and votes reach everyone instantly without a server sitting idle.
+- **No accounts.** You pick a username and share a room link, and the app installs as a PWA.
