@@ -7,27 +7,24 @@ link: https://notebook.byearlybird.com
 order: 2
 ---
 
-Notebook is a minimal daily notebook. Each day is a ruled list of notes and tasks that you
-edit in place. Press + to open a row, Enter to start the next one, and Tab to nest it. A
-separate list holds what you want to get done this week.
+## What it is
 
-## Why I built it
+Most notes apps ask you to organize before you write: folders, tags, pages. Notebook skips all of
+that. Each day is a plain ruled list of notes and tasks that you edit in place, and a separate list
+holds what you want to get done this week. Press + to add a row, Enter for the next one, and Tab to
+nest it.
 
-I wanted a notes app that was a plain list per day, with nothing to organize and no folders.
-It also had to work offline and keep my notes private.
+It works offline, needs no account, and keeps your notes private even when they sync.
 
-## How it works
+## How it's built
 
-- It's local first. Entries are stored on the device and the app works fully signed out.
-- Signing in with an emailed code and a passphrase turns on sync through
-  [Starling](https://github.com/nickrmurphy/starling), my end-to-end encrypted sync library
-  running on Cloudflare Workers.
-- Rows use fractional rank keys, so dragging or nesting an entry writes only that entry. When
-  two devices change the same field, the later edit wins.
-- It's a PWA, so it installs on a phone and opens straight to today.
-
-## What I learned
-
-Most of the work went into sync edge cases: an entry whose parent was deleted on another device,
-or two entries indented under each other. Making those entries show up at the top level instead
-of disappearing kept the app trustworthy.
+- **Local first.** Entries live in IndexedDB on your device, and the app works fully signed out.
+  Every edit is saved locally before anything touches the network.
+- **End-to-end encrypted sync.** Sync runs on [Starling](https://github.com/nickrmurphy/starling),
+  my own sync library. Everything that syncs is encrypted with an account key that only your
+  passphrase unlocks, so the server never sees your notes.
+- **Cloudflare backend.** Each account's synced data lives in its own SQLite-backed Durable Object,
+  accounts live in D1, and sign-in uses emailed one-time codes.
+- **Conflict-friendly data model.** Rows use fractional rank keys, so dragging or nesting an entry
+  writes only that entry, and edits on two devices merge field by field.
+- **PWA.** It installs on a phone and opens straight to today.
