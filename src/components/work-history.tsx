@@ -9,7 +9,7 @@ export type WorkItem = {
 export function WorkHistory({ items }: { items: WorkItem[] }) {
   return (
     <section className="space-y-4 max-w-xl">
-      <h2 className="text-body font-semibold text-eb-accent">Work</h2>
+      <h2 className="font-display text-body font-semibold text-eb-accent">Work</h2>
       <ul className="border-t border-eb-muted">
         {items.map((item) => (
           <li
