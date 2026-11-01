@@ -7,7 +7,7 @@ export type ValueItem = {
 export function Values({ items }: { items: ValueItem[] }) {
   return (
     <section className="space-y-4">
-      <h2 className="font-display text-body font-semibold text-eb-accent">Values</h2>
+      <h2 className="text-body font-semibold text-eb-accent">Values</h2>
       <ul className="grid sm:grid-cols-2 gap-x-10 border-t border-eb-muted">
         {items.map((value, index) => (
           <li key={value.title} className="py-5 border-b border-eb-muted flex gap-4">

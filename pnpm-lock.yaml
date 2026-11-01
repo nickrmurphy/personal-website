@@ -11,9 +11,6 @@ importers:
       '@cloudflare/vite-plugin':
         specifier: ^1.64.0
         version: 1.64.0(@types/node@22.19.7)(vite@7.3.1(@types/node@22.19.7)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.9.1))(wrangler@4.151.0(@types/node@22.19.7))
-      '@fontsource-variable/bricolage-grotesque':
-        specifier: ^5.3.0
-        version: 5.3.0
       '@fontsource-variable/karla':
         specifier: ^5.3.0
         version: 5.3.0
@@ -644,9 +641,6 @@ packages:
     peerDependenciesMeta:
       '@exodus/crypto':
         optional: true
-
-  '@fontsource-variable/bricolage-grotesque@5.3.0':
-    resolution: {integrity: sha512-TLi9Q4hJjS2UvoTMRSS2nHu6c4R56lAw60NR9QYtVRCHn0XtsFpiEhNffZ8Glsoxu6wEEwLKBP8lb94J52PNBA==}
 
   '@fontsource-variable/karla@5.3.0':
     resolution: {integrity: sha512-CypH/IGhvpU0I4sue6YG+ZDyx5heglFJAiU2NClTkKOh+jsqjZ7AAgWKGG59+X1dGCN/9L4BLLacCXD7TBBETA==}
@@ -3210,8 +3204,6 @@ snapshots:
     optional: true
 
   '@exodus/bytes@1.8.0': {}
-
-  '@fontsource-variable/bricolage-grotesque@5.3.0': {}
 
   '@fontsource-variable/karla@5.3.0': {}
 
