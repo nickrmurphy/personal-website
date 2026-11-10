@@ -1,0 +1,36 @@
+---
+title: Plates
+summary: A food journal for eating by feel. Rate how full you are and how healthy the plate was, not calories.
+image: /images/projects/plates.png
+imageAlt: Plates on desktop and on a phone, showing a timeline of meals with food icons and ratings, and a trends page with stat cards and a fullness chart
+link: https://plates.byearlybird.com
+order: 3
+---
+
+## What it is
+
+Counting calories is tedious, and it's easy to give up on. Plates asks two quick questions
+instead. After a meal, you tap **+**, name it, and rate how full you are and how healthy the plate
+was. A snack only gets the health rating.
+
+- **How full are you?** A 1 to 10 scale, from "Starving" to "Extremely stuffed". The goal is 6 or
+  7: satisfied, not stuffed.
+- **How healthy was it?** A 1 to 5 plate check, from "Treat" to "Ideal". Each level describes
+  something you can see on the plate, like "half the plate veg, plus protein", so a 4 means the
+  same thing next month as it does today.
+
+The timeline shows every meal under its day, with that day's averages. Trends shows how often
+meals land in range, and how that changes over a week, a month or three months.
+
+## How it's built
+
+- **Food icons instead of photos.** Each meal gets an icon, like a fish, a salad leaf or a pizza
+  slice, picked from the meal's name by a small model on Cloudflare Workers AI. Only the name is
+  sent, with nothing saying whose it is, and a name you've eaten before reuses its icon.
+- **Scales grounded in research.** Fullness uses the wording of UC Berkeley's Hunger-Satiety
+  Scale. The health check draws on the NOVA food-processing groups and Harvard's Healthy Eating
+  Plate.
+- **Encrypted sync.** Like [Notebook](/projects/notebook), Plates runs on
+  [Starling](/projects/starling), so meals are saved on your device first and encrypted before they
+  sync.
+- **On the web.** It installs from the browser on any phone or computer.
