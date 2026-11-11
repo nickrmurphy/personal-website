@@ -4,7 +4,8 @@ import { Projects } from "@/components/projects";
 import { ValueItem, Values } from "@/components/values";
 import { WorkHistory, WorkItem } from "@/components/work-history";
 import { projects } from "@/lib/projects";
-import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: App });

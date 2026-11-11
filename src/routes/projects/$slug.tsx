@@ -1,4 +1,5 @@
-import { ArrowLeftIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon } from "@phosphor-icons/react/dist/csr/ArrowLeft";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
 import { getProject } from "@/lib/projects";
