@@ -4,7 +4,8 @@ import { Projects } from "@/components/projects";
 import { ValueItem, Values } from "@/components/values";
 import { WorkHistory, WorkItem } from "@/components/work-history";
 import { projects } from "@/lib/projects";
-import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: App });
@@ -50,7 +51,7 @@ function App() {
       <header className="flex flex-col-reverse sm:flex-row gap-8">
         <div className="w-full sm:w-2/3 flex flex-col items-start justify-start gap-6">
           <div className="space-y-4">
-            <h1 className="text-display-3 sm:text-display-2 lg:text-display-1 font-extrabold uppercase tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
+            <h1 className="font-display text-display-3 sm:text-display-2 font-semibold tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
               Hi! I'm Nick.
             </h1>
             <p className="text-title font-normal max-w-prose text-center sm:text-left">

@@ -1,4 +1,5 @@
-import { ArrowLeftIcon, ArrowUpRightIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon } from "@phosphor-icons/react/dist/csr/ArrowLeft";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 
 import { getProject } from "@/lib/projects";
@@ -46,7 +47,7 @@ function ProjectPage() {
         className="aspect-video w-full object-cover rounded-surface border border-eb-muted"
       />
       <header className="space-y-3">
-        <h1 className="text-display-3 sm:text-display-2 font-extrabold uppercase tracking-(--eb-letter-spacing-display) text-balance">
+        <h1 className="font-display text-display-3 sm:text-display-2 font-semibold tracking-(--eb-letter-spacing-display) text-balance">
           {project.title}
         </h1>
         <p className="text-title font-normal text-eb-text-muted max-w-prose">{project.summary}</p>
