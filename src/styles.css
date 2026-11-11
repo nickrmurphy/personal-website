@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/karla";
+@import "@fontsource-variable/fraunces";
 @plugin "@tailwindcss/typography";
 
 /* EB design system tokens. Dark only. */
@@ -62,6 +63,7 @@
   --color-eb-danger: var(--eb-danger);
 
   --font-sans: var(--eb-font-family);
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
 
   --text-body: var(--eb-font-size-body);
   --text-body--line-height: var(--eb-line-height-body);
