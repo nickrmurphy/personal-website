@@ -50,8 +50,8 @@ function App() {
       <header className="flex flex-col-reverse sm:flex-row gap-8">
         <div className="w-full sm:w-2/3 flex flex-col items-start justify-start gap-6">
           <div className="space-y-4">
-            <h1 className="text-display-3 sm:text-display-2 lg:text-display-1 font-extrabold uppercase tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
-              Hi! I'm Nick.
+            <h1 className="text-display-3 sm:text-display-2 lg:text-display-1 font-extrabold tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
+              Hi! I'm Frances.
             </h1>
             <p className="text-title font-normal max-w-prose text-center sm:text-left">
               I'm a software engineer based in Chicago. I care about helping people do their best
