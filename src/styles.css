@@ -116,6 +116,13 @@ body {
   font-size: 1rem;
 }
 
+/* Section headings match the page title's typeface and sit close to their text. */
+.prose-eb :is(h2, h3) {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
 :focus-visible {
   outline: 2px solid var(--eb-accent);
   outline-offset: 2px;
