@@ -25,12 +25,15 @@ meals land in range, and how that changes over a week, a month or three months.
 ## How it's built
 
 - **Food icons instead of photos.** Each meal gets an icon, like a fish, a salad leaf or a pizza
-  slice, picked from the meal's name by a small model on Cloudflare Workers AI. Only the name is
-  sent, with nothing saying whose it is, and a name you've eaten before reuses its icon.
+  slice, picked from the meal's name by Clef Flash, a small model on Cloudflare Workers AI that can
+  only answer with one of the icons. Only the name is sent, with nothing saying whose it is, and a
+  name you've eaten before reuses its icon.
 - **Scales grounded in research.** Fullness uses the wording of UC Berkeley's Hunger-Satiety
   Scale. The health check draws on the NOVA food-processing groups and Harvard's Healthy Eating
   Plate.
 - **Encrypted sync.** Like [Notebook](/projects/notebook), Plates runs on
   [Starling](/projects/starling), so meals are saved on your device first and encrypted before they
   sync.
-- **On the web.** It installs from the browser on any phone or computer.
+- **Yours to take with you.** Settings exports every meal to one JSON file and imports it back.
+- **Native with Tauri.** It's an iPhone app built with [Tauri](https://tauri.app): the same web
+  interface, running in the system's own webview instead of a browser tab.
