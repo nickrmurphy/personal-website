@@ -15,25 +15,29 @@ const workHistory: WorkItem[] = [
     title: "Engineering Manager",
     company: "Higharc",
     location: "Remote",
-    period: "2026 – Present",
+    startYear: 2026,
+    endYear: "present",
   },
   {
     title: "Senior Software Engineer, Team Lead",
     company: "STEAMe",
     location: "Chicago, IL",
-    period: "2024 – 2026",
+    startYear: 2024,
+    endYear: 2026,
   },
   {
     title: "Senior Software Engineer",
     company: "Unite Us",
     location: "Remote",
-    period: "2021 – 2023",
+    startYear: 2021,
+    endYear: 2023,
   },
   {
     title: "Development Team Manager",
     company: "Applied Systems",
     location: "University Park, IL",
-    period: "2019 – 2021",
+    startYear: 2019,
+    endYear: 2021,
     previousTitle: "Software Developer",
   },
 ];
@@ -60,13 +64,17 @@ function App() {
             </p>
           </div>
           <div className="flex gap-3 mt-auto flex-wrap justify-center sm:justify-start w-full">
-            <LinkBadge href="https://github.com/nickrmurphy" label="GitHub">
-              <GithubLogoIcon weight="bold" />
-              <span className="sm:block hidden">GitHub</span>
-            </LinkBadge>
-            <LinkBadge href="https://www.linkedin.com/in/nrmurphy" label="LinkedIn">
+            <LinkBadge
+              href="https://www.linkedin.com/in/nrmurphy"
+              label="LinkedIn"
+              variant="primary"
+            >
               <LinkedinLogoIcon weight="bold" />
               <span className="sm:block hidden">LinkedIn</span>
+            </LinkBadge>
+            <LinkBadge href="https://github.com/nickrmurphy" label="GitHub" variant="secondary">
+              <GithubLogoIcon weight="bold" />
+              <span className="sm:block hidden">GitHub</span>
             </LinkBadge>
           </div>
         </div>
