@@ -15,25 +15,29 @@ const workHistory: WorkItem[] = [
     title: "Engineering Manager",
     company: "Higharc",
     location: "Remote",
-    period: "2026 – Present",
+    startYear: 2026,
+    endYear: "present",
   },
   {
     title: "Senior Software Engineer, Team Lead",
     company: "STEAMe",
     location: "Chicago, IL",
-    period: "2024 – 2026",
+    startYear: 2024,
+    endYear: 2026,
   },
   {
     title: "Senior Software Engineer",
     company: "Unite Us",
     location: "Remote",
-    period: "2021 – 2023",
+    startYear: 2021,
+    endYear: 2023,
   },
   {
     title: "Development Team Manager",
     company: "Applied Systems",
     location: "University Park, IL",
-    period: "2019 – 2021",
+    startYear: 2019,
+    endYear: 2021,
     previousTitle: "Software Developer",
   },
 ];
@@ -51,7 +55,7 @@ function App() {
       <header className="flex flex-col-reverse sm:flex-row gap-8">
         <div className="w-full sm:w-2/3 flex flex-col items-start justify-start gap-6">
           <div className="space-y-4">
-            <h1 className="font-display text-display-3 sm:text-display-2 font-semibold tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
+            <h1 className="text-display-3 sm:text-display-2 font-extrabold tracking-(--eb-letter-spacing-display) text-balance text-center sm:text-left">
               Hi! I'm Nick.
             </h1>
             <p className="text-title font-normal max-w-prose text-center sm:text-left">
@@ -60,13 +64,17 @@ function App() {
             </p>
           </div>
           <div className="flex gap-3 mt-auto flex-wrap justify-center sm:justify-start w-full">
-            <LinkBadge href="https://github.com/nickrmurphy" label="GitHub">
-              <GithubLogoIcon weight="bold" />
-              <span className="sm:block hidden">GitHub</span>
-            </LinkBadge>
-            <LinkBadge href="https://www.linkedin.com/in/nrmurphy" label="LinkedIn">
+            <LinkBadge
+              href="https://www.linkedin.com/in/nrmurphy"
+              label="LinkedIn"
+              variant="primary"
+            >
               <LinkedinLogoIcon weight="bold" />
               <span className="sm:block hidden">LinkedIn</span>
+            </LinkBadge>
+            <LinkBadge href="https://github.com/nickrmurphy" label="GitHub" variant="secondary">
+              <GithubLogoIcon weight="bold" />
+              <span className="sm:block hidden">GitHub</span>
             </LinkBadge>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import { SectionHeading } from "@/components/section-heading";
+
 export type ValueItem = {
   title: string;
   // Optional one-line note shown under the title.
@@ -6,12 +8,12 @@ export type ValueItem = {
 
 export function Values({ items }: { items: ValueItem[] }) {
   return (
-    <section className="space-y-4">
-      <h2 className="text-body font-semibold text-eb-accent">Values</h2>
-      <ul className="grid sm:grid-cols-2 gap-x-10 border-t border-eb-muted">
+    <section>
+      <SectionHeading>Values</SectionHeading>
+      <ul className="grid sm:grid-cols-2 gap-x-10">
         {items.map((value, index) => (
           <li key={value.title} className="py-5 border-b border-eb-muted flex gap-4">
-            <div className="font-semibold text-eb-accent tabular-nums">
+            <div className="font-semibold text-eb-text-muted tabular-nums">
               {String(index + 1).padStart(2, "0")}
             </div>
             <div className="space-y-1">

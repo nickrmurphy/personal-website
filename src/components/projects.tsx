@@ -1,24 +1,22 @@
 import { Link } from "@tanstack/react-router";
 
+import { SectionHeading } from "@/components/section-heading";
 import type { ProjectMeta } from "@/lib/projects";
 
-// A horizontally scrolling row of project cards that snap into place.
+// A grid rather than a scroll row so every project is visible at once.
 export function Projects({ items }: { items: ProjectMeta[] }) {
   return (
-    <section className="space-y-4">
-      <h2 className="text-body font-semibold text-eb-accent">Projects</h2>
-      <ul className="-mx-4 sm:-mx-10 px-4 sm:px-10 scroll-px-4 sm:scroll-px-10 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 sm:[mask-image:linear-gradient(to_right,transparent,black_2.5rem,black_calc(100%-2.5rem),transparent)] [scrollbar-width:thin] [scrollbar-color:var(--eb-muted)_transparent]">
+    <section className="space-y-6">
+      <SectionHeading>Projects</SectionHeading>
+      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((project) => (
-          <li
-            key={project.slug}
-            className="w-72 sm:w-80 shrink-0 snap-start snap-always last:snap-end"
-          >
+          <li key={project.slug}>
             <Link
               to="/projects/$slug"
               params={{ slug: project.slug }}
-              className="group block space-y-3"
+              className="group flex flex-col gap-3"
             >
-              <div className="overflow-hidden rounded-surface border border-eb-muted">
+              <div className="overflow-hidden rounded-surface border border-eb-muted transition-colors duration-200 ease-(--eb-ease-standard) group-hover:border-eb-border">
                 <img
                   src={project.image}
                   alt={project.imageAlt}
@@ -26,10 +24,11 @@ export function Projects({ items }: { items: ProjectMeta[] }) {
                 />
               </div>
               <div className="space-y-1">
-                <div className="font-semibold group-hover:underline underline-offset-4">
-                  {project.title}
-                </div>
+                <div className="font-semibold">{project.title}</div>
                 <div className="text-eb-text-muted">{project.summary}</div>
+                <div className="pt-1 font-semibold text-eb-accent underline-offset-4 group-hover:underline">
+                  Read the write-up →
+                </div>
               </div>
             </Link>
           </li>
