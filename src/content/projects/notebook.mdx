@@ -1,28 +1,31 @@
 ---
 title: Notebook
-summary: Daily notes and tasks that live on your device and sync end-to-end encrypted.
+summary: Simple, private daily notes, tasks and habits, on the web, Mac and iPhone.
 image: /images/projects/notebook.png
 imageAlt: Notebook on a Mac and on an iPhone, showing today's notes and tasks, habits, pinned tasks, and a month calendar
 link: https://notebook.byearlybird.com
 order: 2
 ---
 
-## What it is
+My desk used to be a mess of sticky notes and notepad pages, and most notes apps didn't help: they
+ask you to organize before you write, with folders, tags and pages. Notebook is for anyone who just
+wants one simple, private place for their day. I design and build it myself, and I use it every day.
 
-Most notes apps ask you to organize before you write: folders, tags, pages. Notebook skips all of
-that. Each day is a plain ruled list of notes and tasks that you edit in place, and a separate list
-holds what you want to get done this week.
+Each day is a plain ruled list of notes and tasks that you edit in place, like lines in a text
+editor. Alongside it are your habits, the tasks you've pinned, and, on Mac and iPhone, the day's
+events from your own calendars. At the end of each week, AI can write you a short recap, with zero
+data retention. Your notes work offline and stay private.
 
-It works offline. Signing in to sync across devices is optional, and your notes stay private when
-they sync.
+## How it works
 
-## How it's built
+Notes are saved to a database on your device, so everything is instant and works offline. In the
+background they sync through [Starling](/projects/starling), my own sync library, which encrypts
+everything on the device first, so the server only relays data it can't read. Weekly recaps are the
+one time readable text leaves the device, and only when you ask: it goes to an AI service that never
+learns who sent it.
 
-- **Local first.** Notes are saved to a database on your device, so everything is instant and
-  works offline. Sync happens in the background.
-- **Encrypted sync.** Sync runs on [Starling](/projects/starling), my own sync library. Notes are
-  encrypted on the device before they leave it, so the server never sees them.
-- **Built for more than one device.** Edits from your phone and laptop merge piece by piece, so
-  moving a note on one never undoes rewording it on the other.
-- **Native with Tauri.** It's a Mac and iPhone app built with [Tauri](https://tauri.app): the same
-  web interface, running in the system's own webview instead of a browser tab.
+It's one app in three places: on the web at [notebook.byearlybird.com](https://notebook.byearlybird.com),
+so anyone can try it without installing anything, and as Mac and iPhone apps built with
+[Tauri](https://tauri.app).
+
+The sticky notes are gone from my desk.
