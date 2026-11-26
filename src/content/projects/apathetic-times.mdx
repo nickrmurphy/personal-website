@@ -1,0 +1,36 @@
+---
+title: Apathetic Times
+summary: Weigh in on one thing Congress is working on each day, with a five-minute brief to get up to speed and a room to talk it over with friends.
+image: /images/projects/apathetic-times-chat.png
+imageAlt: Two phones showing an Apathetic Times chat room, with messages about the day's briefing and a vote card
+link: https://chat.apathetictimes.com
+order: 1
+---
+
+Many people opt out of following Congress because the coverage is stressful and written to provoke.
+Apathetic Times is our attempt at a calmer way back in, one that gives people a sense that their
+view counts.
+
+I'm building it with my colleague [Ben Goldin](https://bengoldin.com/). He sets the product and
+design direction, and I lead the engineering.
+
+The app picks one report a day from the Congressional Research Service, Congress's nonpartisan
+research group. You read or listen to a short brief on it in under five minutes, then share your
+take: what matters to you, and what outcome you'd want. You land somewhere from a hard no to an
+emphatic yes, and talk it over with friends in a shared room.
+
+## How it works
+
+Each day a scheduled job pulls the latest reports from Congress and automatically picks one, using
+guidelines we set. It parses the report and hands it to Claude, which writes the brief, the
+discussion prompt and a script for the audio version. Gemini's text-to-speech then reads the script
+aloud. It all runs on Cloudflare: the daily job, the database, and the chat rooms, which update live
+as friends vote and comment.
+
+We built it for the web so we could iterate quickly and reach anyone, whatever phone they have. We
+learned that from our first version, a native iOS app: every change waited on Apple's review, and we
+couldn't hear from anyone on Android.
+
+Today it's where Ben, our friends and I trade takes on whatever Congress is up to, and I come away
+knowing a little more each time. We're still building, so it can reach more of the people who've
+tuned out and give them some say in a chaotic government.
