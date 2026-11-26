@@ -2,6 +2,7 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 
 import { getSiteOrigin } from "@/lib/site-origin";
 import appCss from "../styles.css?url";
+import karlaLatin from "@fontsource-variable/karla/files/karla-latin-wght-normal.woff2?url";
 
 const description = "Software engineer in Chicago.";
 
@@ -30,6 +31,14 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      // Fetch the font alongside the CSS so text doesn't render in the fallback first.
+      {
+        rel: "preload",
+        href: karlaLatin,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "stylesheet",
         href: appCss,
