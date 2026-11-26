@@ -1,0 +1,34 @@
+---
+title: Plates
+summary: "A food journal for eating by feel: rate how full you are and how healthy each meal was, instead of counting calories."
+image: /images/projects/plates.png
+imageAlt: Plates on three iPhones, showing a timeline of meals with food icons and ratings, trends with stat cards and a fullness chart, and the sheet for rating a meal
+order: 3
+---
+
+Counting calories is tedious, and it's easy to give up on. Plates is for anyone who wants to eat
+better without doing the math: after each meal, you answer two quick questions instead. I design
+and build it myself.
+
+You tap **+**, name the meal, and rate how full you are, from 1 ("Starving") to 10 ("Extremely
+stuffed"), aiming for 6 or 7. Then you rate how healthy the plate was, from 1 ("Treat") to 5
+("Ideal"). Each health level describes something you can see on the plate, like "half the plate
+veg, plus protein", so a 4 means the same thing next month as it does today. A snack only gets the
+health rating. The timeline shows every meal under its day, and Trends shows how often meals land
+in range over a week, a month or three months.
+
+## How it works
+
+Meals are saved to a database on your phone, so logging is instant and works offline. In the
+background they sync through [Starling](/projects/starling), encrypted on the device first, just
+like [Notebook](/projects/notebook). Instead of a photo, each meal gets an icon, like a fish, a
+salad leaf or a pizza slice. A small AI model on Cloudflare picks it from the meal's name, and it
+can only answer with one of the icons. Only the name is sent, with nothing saying whose it is, and
+a name you've eaten before reuses its icon.
+
+The scales come from research, not my own guesses: fullness uses the wording of UC Berkeley's
+Hunger-Satiety Scale, and the health check draws on the NOVA food-processing groups and Harvard's
+Healthy Eating Plate. Your meals are yours to take with you, too: Settings exports every one to a
+single file and imports it back.
+
+It's an iPhone app, built with [Tauri](https://tauri.app).
